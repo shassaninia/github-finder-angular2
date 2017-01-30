@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
+    moduleId: module.id,
   selector: 'github',
-  template: `GitHub Component`,
+  templateUrl: 'github.component.html',
 })
 export class GithubComponent  { 
     constructor(){
