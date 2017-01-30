@@ -7,12 +7,14 @@ import {GithubService} from '../services/github.service';
   templateUrl: 'github.component.html'
 })
 export class GithubComponent  { 
-    constructor(private _githubService : GithubService){
-             console.log('Github Component Initialized..');   
-             this.testGithubService();
+    user:any;
+
+    constructor(private _githubService : GithubService){ 
+
+          this._githubService.getUser()
+                       .subscribe(user => {
+                        
+                         this.user = user;
+                       })  
     }
-    
-  testGithubService(){
-    this._githubService.testService();
-  }
  }
